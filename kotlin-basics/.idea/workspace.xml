@@ -21,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="kotlin-variables" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -39,6 +39,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -94,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614474829513</updated>
       <workItem from="1614474832106" duration="1000" />
-      <workItem from="1614475363408" duration="1581000" />
+      <workItem from="1614475363408" duration="2308000" />
     </task>
     <task id="LOCAL-00001" summary="initial kotlin project">
       <created>1614475800786</created>
@@ -117,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614476298913</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="number data types">
+      <created>1614477061931</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1614477061931</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +139,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial kotlin project" />
     <MESSAGE value="kotlin variables (val vs var)" />
-    <option name="LAST_COMMIT_MESSAGE" value="kotlin variables (val vs var)" />
+    <MESSAGE value="number data types" />
+    <option name="LAST_COMMIT_MESSAGE" value="number data types" />
   </component>
 </project>

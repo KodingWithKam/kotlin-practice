@@ -38,5 +38,73 @@ fun main(args: Array<String>) {
     val e: Double = 2.7182818284 // Double
     val eFloat: Float = 2.7182818284f // Float, actual value is 2.7182817
 
+
+    /*
+    * The type Boolean represents boolean objects that can have two values: true and false.
+    * Boolean has a nullable counterpart Boolean? that also has the null value.
+    * Built-in operations on booleans include:
+    * ||– disjunction (logical OR)
+    * &&– conjunction (logical AND)
+    * !- negation (logical NOT)
+    * || and && work lazily.
+    * */
+    val myTrue: Boolean = true
+    val myFalse: Boolean = false
+    val boolNull: Boolean? = null
+
+    println(myTrue || myFalse)
+    println(myTrue && myFalse)
+    println(!myTrue)
+
+
+    /*
+    * Characters are represented by the type Char. Character literals go in single quotes: '1'.
+    * Special characters start from an escaping backslash \. The following escape sequences
+    * are supported: \t, \b, \n, \r, \', \", \\ and \$.
+    * To encode any other character, use the Unicode escape sequence syntax: '\uFF00'.
+    * */
+    val aChar: Char = 'a'
+
+    println(aChar)
+    println('\n') //prints an extra newline character
+    println('\uFF00')
+
+    /*
+    * STRINGS
+    * Strings in Kotlin are represented by the type String.
+    * Generally, a string value is a sequence of characters in double quotes (" ).
+    *
+    * Elements of a string are characters that you can access via the indexing operation: s[i].
+    * You can iterate over these characters with a for loop:
+    *
+    * Strings are immutable. Once you initialize a string, you can't change its value or
+    * assign a new value to it. All operations that transform strings return their results in
+    * a new String object, leaving the original string unchanged.
+    *
+    * STRING LITERALS
+    * Kotlin has two types of string literals:
+    * escaped strings that may contain escaped characters
+    * raw strings that can contain newlines and arbitrary text
+    * Escaping is done in the conventional way, with a backslash (\ ).
+    * A raw string is delimited by a triple quote (""" ), contains no escaping and can
+    * contain newlines and any other characters:
+    *
+    * STRING TEMPLATES
+    * String literals may contain template expressions - pieces of code that are evaluated and whose
+    * results are concatenated into the string. A template expression starts with a dollar sign ($)
+    * and consists of either a name:
+     */
+    val str = "abcd 123"
+    val escapedString = "Hello, world!\n"
+    val rawString = """
+    for (c in "foo")
+        print(c)
+    """
+
+    val i = 10
+    println("i = $i") // prints "i = 10"
+
+    val s = "abc"
+    println("$s.length is ${s.length}") // prints "abc.length is 3"
     println("Hello World!")
 }
