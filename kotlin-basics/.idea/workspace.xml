@@ -100,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614474829513</updated>
       <workItem from="1614474832106" duration="1000" />
-      <workItem from="1614475363408" duration="9702000" />
+      <workItem from="1614475363408" duration="11101000" />
     </task>
     <task id="LOCAL-00001" summary="initial kotlin project">
       <created>1614475800786</created>
@@ -172,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614524898852</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="kotlin inheritance">
+      <created>1614537729442</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614537729442</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +195,7 @@
     <MESSAGE value="kotlin nullable" />
     <MESSAGE value="kotlin classes" />
     <MESSAGE value="kotlin data classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="kotlin data classes" />
+    <MESSAGE value="kotlin inheritance" />
+    <option name="LAST_COMMIT_MESSAGE" value="kotlin inheritance" />
   </component>
 </project>
