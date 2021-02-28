@@ -21,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="kotlin-nullables" />
+        <entry key="$PROJECT_DIR$/.." value="kotlin-data-classes" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -100,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614474829513</updated>
       <workItem from="1614474832106" duration="1000" />
-      <workItem from="1614475363408" duration="7212000" />
+      <workItem from="1614475363408" duration="9702000" />
     </task>
     <task id="LOCAL-00001" summary="initial kotlin project">
       <created>1614475800786</created>
@@ -165,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614524259654</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="kotlin data classes">
+      <created>1614524898852</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1614524898852</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +187,7 @@
     <MESSAGE value="kotlin functions" />
     <MESSAGE value="kotlin nullable" />
     <MESSAGE value="kotlin classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="kotlin classes" />
+    <MESSAGE value="kotlin data classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="kotlin data classes" />
   </component>
 </project>

@@ -1,27 +1,45 @@
 fun main(args: Array<String>) {
-    val user = User(id = 1, name = "Kam")
+    val myCar = Car(name = "A3", brand = "Audi")
+    val myECar = ElectricCar(name = "S", brand = "Tesla", batteryLife = 85.0)
 
-    // Fetch property
-    val name = user.name
-    println(name)
-
-    // Assign new value
-    user.name = "Test"
-
-    val user2 = User(id = 1, name = "John")
-
-    // compare
-    println(user == user2)
+    myECar.extendRange(200.0)
+    myCar.drive(200.0)
+    myECar.drive(200.0)
 }
 
-/*
-* You often create classes whose main purpose is to hold data. In such classes,
-* some standard functionality and utility functions are often mechanically derivable from the data.
-* In Kotlin, these are called data classes and are marked with data:
-*
-* To ensure consistency and meaningful behavior of the generated code, data classes have to fulfill the following requirements:
-* The primary constructor needs to have at least one parameter.
-* All primary constructor parameters need to be marked as val or var.
-* Data classes cannot be abstract, open, sealed or inner.
-* */
-data class User(val id: Long, var name: String)
+/**
+ * Open keyword needs to be added to classes that you plan on using for inheritance
+ */
+
+// Super class, parent class
+open class Vehicle {
+    // Properties
+
+    // methods
+}
+
+// Sub class, child class of vehicle
+// Super class of electric car
+open class Car(val name: String, val brand: String) {
+    open var range: Double = 0.0
+
+    fun extendRange(amount: Double) {
+        if(amount > 0) {
+            range += amount
+        }
+    }
+
+    open fun drive(distance: Double) {
+        println("Drove for $distance KM")
+    }
+}
+
+// Sub class, child class of car
+class ElectricCar(name: String, brand: String, batteryLife: Double): Car(name, brand) {
+    override var range = batteryLife * 6
+
+    override fun drive(distance: Double) {
+        super.drive(distance)
+        println("Drove for $distance KM on electricity")
+    }
+}
