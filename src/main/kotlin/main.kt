@@ -1,37 +1,13 @@
 fun main(args: Array<String>) {
-
     /*
-    * Arraylists are used to create a dynamic array
-    * ArrayList class provides both read/write functions
-    * ArrayList follows the sequence of insertion order
-    * ArrayList is non synchronized and it may contain dup elements
+    * Lambda is a function with no name
+    * lambdas and anonymous functions are function literals (functions not declared but passed as expression)
+    * Lambda is defined with curly braces {} which takes variables as a parameter and a body of a function
+    * Body of a function is written after the variable followed by '->' operator
     * */
-    val arrayList = ArrayList<String>() // Create empty array list
-    arrayList.add("One") // Add object to list
-    arrayList.add("Two")
+    val sum: (Int, Int) -> Int = { a: Int, b: Int -> a + b }
+    println(sum(10,5))
 
-    for (i in arrayList) {
-        println(i)
-    }
-
-    println(arrayList[0])
-    println(arrayList[1])
-
-    val numList = ArrayList<Double>()
-    numList.add(2.0)
-    numList.add(4.0)
-    numList.add(6.0)
-    numList.add(8.0)
-    numList.add(10.0)
-
-    println(getAverage(numList))
-}
-
-fun getAverage(data: ArrayList<Double>): Double {
-    var total = 0.0
-    for (i in data) {
-        total += i
-    }
-    println("average....")
-    return total/data.size
+    val sum2 = { a: Int, b: Int -> println(a + b)}
+    println(sum2(10,5))
 }
