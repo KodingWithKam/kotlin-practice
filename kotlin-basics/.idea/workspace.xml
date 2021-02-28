@@ -21,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="kotlin-variables" />
+        <entry key="$PROJECT_DIR$/.." value="kotlin-number-types" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -100,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614474829513</updated>
       <workItem from="1614474832106" duration="1000" />
-      <workItem from="1614475363408" duration="2308000" />
+      <workItem from="1614475363408" duration="2999000" />
     </task>
     <task id="LOCAL-00001" summary="initial kotlin project">
       <created>1614475800786</created>
@@ -130,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614477061931</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="kotling strings">
+      <created>1614477744917</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614477744917</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +147,7 @@
     <MESSAGE value="initial kotlin project" />
     <MESSAGE value="kotlin variables (val vs var)" />
     <MESSAGE value="number data types" />
-    <option name="LAST_COMMIT_MESSAGE" value="number data types" />
+    <MESSAGE value="kotling strings" />
+    <option name="LAST_COMMIT_MESSAGE" value="kotling strings" />
   </component>
 </project>
