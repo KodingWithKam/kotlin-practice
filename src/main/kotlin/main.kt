@@ -1,90 +1,175 @@
 fun main(args: Array<String>) {
-    // NULLABLES/OPTIONALS in Kotlin
-// Kotlin supports nullability as part of its type System.
-// That means You have the ability to declare whether
-// a variable can hold a null value or not.
-// By supporting nullability in the type system,
-// the compiler can detect
-// possible NullPointerException errors at compile time
-// and reduce the possibility of having them thrown at runtime.
-    val name: String = "Denis"
-// name = null // Compilation Error
 
-    var nullableName: String? = "Denis"
-    nullableName = null // Works
+}
 
-// Here name cannot/must not be null
-    val len = name.length
-    val upper = name.toLowerCase()
+class Person constructor(_firstName: String, _lastName: String) { // or class Person constructor    (_firstName: String, _lastName: String)
+    // Member Variables (Properties) of the class
+    var firstName: String
+    var lastName: String
 
-// but the same methods won't work on nullable types
-    //val len2 = nullableName.length // Compilation Error
-    //val upper2 = nullableName.toLowerCase()  // Compilation Error
+    // Initializer Block
+    init {
+        this.firstName = _firstName
+        this.lastName = _lastName
 
-// So how can we solve this? We could do a null check before hand
+        println("Initialized a new Person object with firstName = $firstName and lastName = $lastName")
+    }
+}
 
-    val nullableName2: String? = "Denis"
+// create an object like so:
+// val denis = Person("Denis", "Panjuta")
 
-    if(nullableName2 != null) {
-        println("Hello, ${nullableName2.toLowerCase()}.")
-        println("Your name is ${nullableName2.length} characters long.")
-    } else {
-        println("Hello, Guest")
+// Alternatively:
+class Person (_firstName: String, _lastName: String) {
+    // Member Variables (Properties) of the class
+    var firstName: String = _firstName
+    var lastName: String = _lastName
+
+    // Initializer Block
+    init {
+        println("Initialized a new Person object with firstName = $firstName and lastName = $lastName")
+    }
+}
+
+// Alternatively:
+class Person(var firstName: String, var lastName: String) {
+    // Initializer Block
+    init {
+        println("Initialized a new Person object with firstName = $firstName and lastName = $lastName")
+    }
+}
+
+// Or even:
+// whereby John and Doe will be default values
+class Person(var firstName: String = "John", var lastName: String= "Doe") {
+    // Initializer Block
+    init {
+        println("Initialized a new Person object with firstName = $firstName and lastName = $lastName")
+    }
+}
+
+// Create an object:
+/*
+    val john = Person()
+    val johnPeterson = Person(lastname: "Peterson")
+
+*/
+
+class Person(var firstName: String, var lastName: String) {
+    var age: Int? = null
+    var hobby: String = "Watch Netflix"
+    var myFirstName = firstName
+
+    // Secondary Constructor
+    constructor(firstName: String, lastName: String, age: Int): this(firstName, lastName)  {
+        this.age = if(age > 0) age else throw IllegalArgumentException("Age must be greater than zero")
     }
 
-// This works but seems to be quite some work...
-// So how about we shorten the syntax...
-// Kotlin provides a Safe call operator, ?.
-// It allows you to combine a null-check and
-// a method call in a single expression.
+    fun stateHobby(){
+        println("$firstname \'s Hobby is: $hobby'" )
+    }
+}
 
-    nullableName2?.toLowerCase()
+// You can use primary or secondary Constructor to create an object
 
-// This is the same as:
-    if(nullableName2 != null)
-        nullableName2.toLowerCase()
-    else
-        null
+// Calls the primary constructor (Age will be null in this case)
+val person1 = Person("Denis", "Panjuta")
 
-// You can use methods on a nullable variable like this
-    val nullableName3: String? = null
-
-    println(nullableName3?.toLowerCase()) // prints null
-    println(nullableName3?.length) // prints null
-
-// You can perform a chain safe calls:
-    //val wifesAge: String? = user?.wife?.age
+// Calls the secondary constructor
+val person2 = Person("Elon", "Musk", 48)
 
 
-// Let'S say we don’t want to print anything if
-// the variable is null?
 
-// In order to perform an operation only if the
-// variable is not null, we can use the safe call
-// operator with let -
+// Having multiple overloads:
 
-    val nullableName4: String? = null
+class Person(var firstName: String, var lastName: String) {
+    var age: Int? = null
+    var eyeColor: String? = null
 
-    nullableName4?.let { println(it.toLowerCase()) }
-    nullableName4?.let { println(it.length) }
-// Prints nothing because there nullableName is null
-// and we used let to prevent anything from being performed
+    // Secondary Constructor
+    constructor(firstName: String, lastName: String, age: Int): this(firstName, lastName)  {
+        this.age = if(age > 0) age else throw IllegalArgumentException("Age must be greater than zero")
+    }
 
-
-// What if we would like to enter a default value?
-// Then we can use the elvis operator ?:
-    val name2 = nullableName4 ?: "Guest"
-
-    //val wifesAge2: String? = user?.wife?.age ?: 0
+    // Secondary Constructor
+    constructor(firstName: String, lastName: String, age: Int, eyeColor: String):
+            this(firstName, lastName, age)  {
+        this.eyeColor = eyeColor
+    }
+}
 
 
-// Not null assertion : !! Operator
-// The !! operator converts a nullable type to a
-// non-null type, and throws a NullPointerException
-// if the nullable type holds a null value.
-// This is risky, and you should only use it if
-// you are 100% certain, that there will be a value in
-// the variable.
-    val nullableName5: String? = null
-    nullableName5!!.toLowerCase() // Results in
+// SETTERS AND GETTERS
+
+// User class with a Primary constructor that accepts
+// three parameters
+class Car(_brand: String, _model: String, _maxSpeed: Int) {
+    // Properties of User class
+    val brand: String = _brand         // Immutable (Read only)
+    var model: String = _model  // Mutable
+    var maxSpeed: Int = _maxSpeed       // Mutable
+}
+
+// Kotlin internally generates a default getter and setter for mutable properties, and a getter (only) for read-only properties.
+
+// It calls these getters and setters internally whenever
+// you access or modify a property using the dot(.) notation.
+// This is how it would look like internally
+class Car(_brand: String, _model: String, _maxSpeed: Int) {
+    val brand: String = _brand
+        get() = field
+
+    var model: String = _model
+        get() = field
+        set(value) {
+            field = value
+        }
+
+    var maxSpeed: Int = _maxSpeed
+        get() = field
+        set(value) {
+            field = value
+        }
+}
+
+// value
+// We use value as the name of the setter parameter. This is the default convention in Kotlin but you’re free to use any other name if you want.
+// The value parameter contains the value that a property is assigned to. For example, when you write user.name = "Elon Musk",
+// the value parameter contains the assigned value "Elon Musk".
+
+// 2. Backing Field (field)
+// Backing field helps you refer to the property
+// inside the getter and setter methods.
+// This is required because if you use the property
+// directly inside the getter or setter then you’ll
+// run into a recursive call which will generate
+// a StackOverflowError.
+
+
+class Car() {
+
+    lateinit var owner : String
+
+    val myBrand: String = "BMW"
+        // Custom getter
+        get() {
+            return field.toLowerCase()
+        }
+
+
+    // default setter and getter
+    var myModel: String = "M5"
+        private set
+
+    var myMaxSpeed: Int = maxSpeed
+        get() = field
+        // Custom Setter
+        set(value) {
+            field = if(value > 0) value else throw IllegalArgumentException("_maxSpeed must be greater than zero")
+        }
+
+    init{
+        this.myModel = "M3"
+        this.owner = "Frank"
+    }
 }
